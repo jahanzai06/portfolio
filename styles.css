@@ -1297,20 +1297,25 @@ a:hover {
         top: 70px;
         left: 0;
         right: 0;
-        bottom: 0;
+        height: calc(100vh - 70px);
         background-color: var(--bg-darker);
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 2.5rem;
         padding: 2rem;
         transform: translateY(-100%);
-        transition: transform var(--transition-normal);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
         z-index: 99;
         border-bottom: 1px solid var(--border-color);
     }
     
     .nav-links.active {
         transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
     
     .avatar-glow-container {
@@ -1353,6 +1358,12 @@ a:hover {
 
     .tab-btn {
         flex-shrink: 0;
+    }
+
+    .welcome-msg {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
     }
 }
 
